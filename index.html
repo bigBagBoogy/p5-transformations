@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    </head>
+    <body>
+        <script>
+            let angle = 0
+            let moonPic
+            let breed = 100
+            let hoog = 100
+            function preload() {
+                moonPic = loadImage("bitcoinMoon.png")
+            }
+            function setup() {
+                let cnv = createCanvas(windowWidth, windowHeight)
+                cnv.position(0, 0)
+                cnv.style("z-index", "-1")
+                angleMode(DEGREES);
+            }
+            
+            function draw() {
+                background(0)
+                translate(windowWidth/2, windowHeight/2)
+                rotate(angle)
+                fill(255)                            
+                image(moonPic,(breed/2)*-1,(hoog/2)*-1,breed,hoog)
+                angle = angle+0.5
+                breed = breed+2
+                hoog = hoog+2
+                if(breed>windowHeight){breed = 10, hoog = 10}
+                        
+
+            }
+        </script>
+    </body>
+</html>
